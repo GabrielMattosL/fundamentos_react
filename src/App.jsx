@@ -6,10 +6,7 @@ import styles from './App.module.css';
 
 import './global.css';
 
-// author: {avatar_url: "", name: "", role: ""}
-// publishedAt: Date
-// content: String
-
+//App.jsx
 const posts = [
   {
     id: 1,
@@ -21,9 +18,9 @@ const posts = [
     content: [
       { type: 'paragraph', content: 'Fala galeraa 👋'},
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifólio. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-      { type: 'paragraph', content: '👉 jane.design/doctorcare'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},
     ],
-    publishedAt: new Date("2025-01-14 12:33"),
+    publishedAt: new Date("2025-01-18 14:49"),
   },
   {
     id: 2,
@@ -35,7 +32,7 @@ const posts = [
     content: [
       { type: 'paragraph', content: 'Fala galeraa 👋'},
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifólio. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-      { type: 'paragraph', content: '👉 jane.design/doctorcare'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},
     ],
     publishedAt: new Date("2025-01-16 12:33"),
   },
@@ -53,7 +50,7 @@ const posts = [
     publishedAt: new Date("2025-01-15 12:33"),
   },
 ]
-
+//App.jsx
 export function App() {
   return (
     <div>
