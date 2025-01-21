@@ -23,7 +23,7 @@ export function Post({ author, publishedAt, content }) {
     locale: ptBR,
     addSuffix: true,
   })
-  //Post.jsx
+  
   const [newCommentText, setNewCommentText] = useState('');
   
   function handleCreateNewComment() {
@@ -32,9 +32,13 @@ export function Post({ author, publishedAt, content }) {
     setComments([...comments, newCommentText]);
     setNewCommentText('');
   }
-  //Post.jsx
   function handleNewCommentChange() {
     setNewCommentText(event.target.value);
+  }
+  
+  //Post.jsx
+  function deleteComment(comment) {
+    console.log(`Deletar comentário ${comment}`)
   }
   
   return (
@@ -66,22 +70,28 @@ export function Post({ author, publishedAt, content }) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu Feedback</strong>
 
-        {/* Post.jsx */}
         <textarea
           name='comentario'
           value={newCommentText}
           placeholder='Deixe um comentário'
           onChange={handleNewCommentChange}
-        />
+          />
 
         <footer>
           <button type='submit'>Publicar</button>
         </footer>
       </form>
 
+      {/* Post.jsx */}
       <div className={styles.commentList}>
         {comments.map(comment => {
-          return <Comment key={comment} content={comment}/>
+          return (
+            <Comment 
+              key={comment} 
+              content={comment} 
+              onDeleteComment={deleteComment}
+            />
+          )
         })}
       </div>
     </article>
